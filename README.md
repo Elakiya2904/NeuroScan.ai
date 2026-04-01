@@ -1,7 +1,5 @@
 # NeuroScan.ai - Brain Tumor Detection Platform
 
-![NeuroScan.ai Logo](https://img.shields.io/badge/NeuroScan.ai-Brain%20Tumor%20Detection-blue?style=flat-square)
-
 ## Overview
 
 **NeuroScan.ai** is an advanced AI-powered platform designed for the detection and classification of brain tumors from MRI scans. Leveraging state-of-the-art deep learning models and ensemble methods, NeuroScan.ai provides accurate and reliable predictions to support diagnostic workflows in healthcare settings.
@@ -61,18 +59,7 @@ The three models work together using an ensemble voting mechanism:
 2. Individual predictions are combined using weighted averaging
 3. Final prediction includes confidence scores for each tumor class
 4. Increased robustness and reliability compared to single models
-
-### Model Performance Comparison
-
-![DenseNet121 Results](images/densenet_results.png)
-*DenseNet121 Model Performance*
-
-![ResNet18 Results](images/resnet_results.png)
-*ResNet18 Model Performance*
-
-![MobileNetV2 Results](images/mobilenet_results.png)
-*MobileNetV2 Model Performance*
-
+   
 -
 ## Getting Started
 
@@ -176,19 +163,6 @@ brain_tumor_detection/
 
 ---
 
-## Model Performance
-
-The ensemble model achieves high accuracy across all tumor categories:
-
-| Tumor Type | Accuracy | Confidence |
-|-----------|----------|-----------|
-| Glioma | 94.5% | High |
-| Meningioma | 92.3% | High |
-| Pituitary | 91.8% | High |
-| No Tumor | 96.2% | High |
-| **Overall** | **93.7%** | **High** |
-
----
 
 ## Screenshots
 
@@ -206,6 +180,8 @@ The ensemble model achieves high accuracy across all tumor categories:
 - Platform overview and capabilities
 - Brain tumor education
 - Model architecture information
+- <img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
+
 
 ---
 
