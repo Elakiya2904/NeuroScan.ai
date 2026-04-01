@@ -15,33 +15,28 @@
 
 ---
 
-## What is a Brain Tumor?
-
-A brain tumor is an abnormal mass or growth of cells in the brain. Because the skull is rigid and cannot expand, any growth inside it can cause significant health complications. Brain tumors can originate from brain cells (primary tumors) or spread from cancer cells in other parts of the body (secondary tumors).
-
-
 ## Screenshots
 
 ### About Page
 - Platform overview and capabilities
 - Brain tumor education
 - Model architecture information
-- <img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
+<img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
 
 ### Tumor Detection Interface
 - MRI image upload and display
 - Real-time predictions with confidence scores
 - Detailed tumor information and symptoms
-- <img width="1600" height="742" alt="image" src="https://github.com/user-attachments/assets/00c5fb3a-c7c6-4c93-a375-334346416bdb" />
+<img width="1600" height="742" alt="image" src="https://github.com/user-attachments/assets/00c5fb3a-c7c6-4c93-a375-334346416bdb" />
 
 
 ### Grad-CAM Visualization
 - Original MRI scan alongside Grad-CAM heatmaps
 - Class-specific attention maps for all ensemble models
 - Heatmap legend for interpretation
-- <img width="1600" height="725" alt="image" src="https://github.com/user-attachments/assets/fb76e918-30a9-492e-9c56-ca304062dde8" />
+<img width="1600" height="725" alt="image" src="https://github.com/user-attachments/assets/fb76e918-30a9-492e-9c56-ca304062dde8" />
 
-
+---
 
 ## Models
 
@@ -73,6 +68,7 @@ The three models work together using an ensemble voting mechanism:
 3. Final prediction includes confidence scores for each tumor class
 4. Increased robustness and reliability compared to single models
    
+--- 
 
 ## Technologies Used
 
@@ -90,5 +86,5 @@ The three models work together using an ensemble voting mechanism:
 
 ⚠️ **MEDICAL DISCLAIMER**: NeuroScan.ai is designed as a **supplementary diagnostic tool** and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions. This tool is intended to assist radiologists and healthcare providers as a second opinion in their diagnostic workflows.
 
----
+
 
