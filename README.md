@@ -1,8 +1,8 @@
-# NeuroScan.ai - Brain Tumor Detection Platform
+# NeuroScan.ai - Brain Tumor Detection 
 
 ## Overview
 
-**NeuroScan.ai** is an advanced AI-powered platform designed for the detection and classification of brain tumors from MRI scans. Leveraging state-of-the-art deep learning models and ensemble methods, NeuroScan.ai provides accurate and reliable predictions to support diagnostic workflows in healthcare settings.
+**NeuroScan.ai** is a platform designed for the detection and classification of brain tumors from MRI scans. Leveraging state-of-the-art deep learning models and ensemble methods, NeuroScan.ai provides accurate and reliable predictions to support diagnostic workflows in healthcare settings.
 
 ### Key Features
 
@@ -19,38 +19,51 @@
 
 A brain tumor is an abnormal mass or growth of cells in the brain. Because the skull is rigid and cannot expand, any growth inside it can cause significant health complications. Brain tumors can originate from brain cells (primary tumors) or spread from cancer cells in other parts of the body (secondary tumors).
 
-### Key Characteristics
 
-- **Benign vs. Malignant**: Benign tumors are non-cancerous and typically grow slowly, while malignant tumors are cancerous and can spread rapidly
-- **Growth Rate**: Tumors vary from slow-growing to aggressive, depending on type and grade
-- **Impact**: Even benign tumors can cause serious complications due to space constraints within the skull
-- **Location Matters**: The location of the tumor determines which brain functions may be affected
+## Screenshots
 
-Brain tumors represent a significant health challenge, affecting both adults and children. Early detection through advanced imaging techniques like MRI combined with AI analysis can significantly improve treatment outcomes and patient prognosis.
+### About Page
+- Platform overview and capabilities
+- Brain tumor education
+- Model architecture information
+- <img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
 
----
+### Tumor Detection Interface
+- MRI image upload and display
+- Real-time predictions with confidence scores
+- Detailed tumor information and symptoms
+- <img width="1600" height="742" alt="image" src="https://github.com/user-attachments/assets/00c5fb3a-c7c6-4c93-a375-334346416bdb" />
+
+
+### Grad-CAM Visualization
+- Original MRI scan alongside Grad-CAM heatmaps
+- Class-specific attention maps for all ensemble models
+- Heatmap legend for interpretation
+- <img width="1600" height="725" alt="image" src="https://github.com/user-attachments/assets/fb76e918-30a9-492e-9c56-ca304062dde8" />
+
+
 
 ## Models
 
 NeuroScan.ai uses an ensemble approach combining three state-of-the-art deep learning architectures:
+ 
+### ResNet-18
 
-### 1. **DenseNet121**
-- **Architecture**: Dense Convolutional Network with 121 layers
-- **Strengths**: Efficient feature reuse, fewer parameters, excellent gradient flow
-- **Performance**: High accuracy with lower computational overhead
-- **Application**: Primary model for feature extraction and classification
+ResNet-18 is a deep convolutional neural network that uses residual connections to avoid vanishing gradient problems.
+It enables stable and efficient training even with deeper architectures.
+In this project, it provides reliable and high-performing predictions for tumor classification.
 
-### 2. **ResNet18**
-- **Architecture**: Residual Network with 18 layers
-- **Strengths**: Deep learning with skip connections preventing vanishing gradients
-- **Performance**: Robust feature learning across various MRI scan types
-- **Application**: Provides diverse feature representations for ensemble voting
+### DenseNet-121
 
-### 3. **MobileNetV2**
-- **Architecture**: Lightweight convolutional network optimized for mobile/edge devices
-- **Strengths**: Efficient inference, smaller model size, fast predictions
-- **Performance**: Maintains accuracy while reducing computational requirements
-- **Application**: Real-time predictions with minimal resource consumption
+DenseNet-121 connects each layer to every other layer, improving feature reuse and gradient flow.
+This architecture captures complex patterns and fine details in MRI images.
+It enhances the model’s ability to detect subtle tumor features.
+
+### MobileNetV2
+
+MobileNetV2 is a lightweight and efficient neural network designed for fast computation.
+It uses depthwise separable convolutions to reduce complexity while maintaining performance.
+In this project, it enables quick and efficient predictions suitable for real-time applications.
 
 ### Ensemble Strategy
 
@@ -60,136 +73,6 @@ The three models work together using an ensemble voting mechanism:
 3. Final prediction includes confidence scores for each tumor class
 4. Increased robustness and reliability compared to single models
    
--
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8 or higher
-- PyTorch with CUDA support (optional, for GPU acceleration)
-- Streamlit
-- PIL (Python Imaging Library)
-- NumPy
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd brain_tumor_detection
-```
-
-2. Create a virtual environment:
-```bash
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Download pre-trained models:
-- Place model files in the `saved_models/` directory:
-  - `densenet121_brain_tumor.pth`
-  - `resnet18_brain_tumor.pth`
-  - `mobilenet_v2_brain_tumor.pth`
-  - `ensemble_model.pth`
-
-### Running the Application
-
-```bash
-streamlit run app.py
-```
-
-The application will launch at `http://localhost:8501`
-
----
-
-## Features
-
-### 1. **Tumor Detection**
-- Upload MRI scan images (JPG, JPEG, PNG)
-- View predictions with confidence scores
-- Display severity levels and tumor information
-- See symptoms and descriptions
-
-### 2. **Grad-CAM Visualization**
-- Visual heatmaps showing model attention regions
-- Understand which areas influenced the prediction
-- Separate visualizations for each ensemble model
-
----
-
-## Application Interface
-
-### Tumor Detection Page
-![Tumor Detection Interface](images/tumor_detection_interface.png)
-*Main interface for uploading MRI scans and viewing predictions with confidence scores*
-
-### Grad-CAM Viewer Page
-![Grad-CAM Visualization](images/gradcam_viewer.png)
-*Grad-CAM heatmaps showing attention regions for each ensemble model (DenseNet121, ResNet18, MobileNetV2)*
-
-### Heatmaps Analysis
-![All Class Heatmaps](images/all_class_heatmaps.png)
-*Comparative heatmaps showing model predictions for all tumor classes (Glioma, Meningioma, Notumorand Pituitary)*
-- Direct comparison between original and Grad-CAM images
-
-### 3. **About NeuroScan.ai**
-- Comprehensive platform information
-- Detailed explanations of brain tumors
-- Model architecture details
-- Use case scenarios
-
----
-
-## Application Structure
-
-```
-brain_tumor_detection/
-├── app.py                          # Main Streamlit application
-├── saved_models/
-│   ├── densenet121_brain_tumor.pth
-│   ├── resnet18_brain_tumor.pth
-│   ├── mobilenet_v2_brain_tumor.pth
-│   └── ensemble_model.pth
-├── colab/
-│   └── brain_tumor_detection.ipynb # Jupyter notebook for training/analysis
-└── README.md                       # This file
-```
-
----
-
-
-## Screenshots
-
-### Tumor Detection Interface
-- MRI image upload and display
-- Real-time predictions with confidence scores
-- Detailed tumor information and symptoms
-
-### Grad-CAM Visualization
-- Original MRI scan alongside Grad-CAM heatmaps
-- Class-specific attention maps for all ensemble models
-- Heatmap legend for interpretation
-
-### About Page
-- Platform overview and capabilities
-- Brain tumor education
-- Model architecture information
-- <img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
-
-
----
-
-## Important Disclaimer
-
-⚠️ **MEDICAL DISCLAIMER**: NeuroScan.ai is designed as a **supplementary diagnostic tool** and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions. This tool is intended to assist radiologists and healthcare providers as a second opinion in their diagnostic workflows.
-
----
 
 ## Technologies Used
 
@@ -199,47 +82,13 @@ brain_tumor_detection/
 - **Model Visualization**: Grad-CAM
 - **Pre-trained Models**: ResNet, DenseNet, MobileNet (ImageNet)
 
----
-
-## Future Enhancements
-
-- [ ] 3D MRI scan support
-- [ ] Real-time model updates with transfer learning
-- [ ] Multi-slice analysis capabilities
-- [ ] Integration with DICOM image standards
-- [ ] Extended tumor classification (more tumor types)
-- [ ] Mobile application development
-- [ ] Cloud deployment with API endpoints
 
 ---
 
-## Contributing
 
-Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
+## Important Disclaimer
 
----
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+⚠️ **MEDICAL DISCLAIMER**: NeuroScan.ai is designed as a **supplementary diagnostic tool** and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions. This tool is intended to assist radiologists and healthcare providers as a second opinion in their diagnostic workflows.
 
 ---
 
-## Contact & Support
-
-For questions, issues, or feedback:
-- Open an issue in the GitHub repository
-- Contact the development team
-
----
-
-## Acknowledgments
-
-- Medical imaging datasets from public brain tumor repositories
-- PyTorch and Streamlit communities
-- Deep learning researchers and practitioners
-
----
-
-**Last Updated**: March 2026  
-**Version**: 1.0.0
