@@ -10,7 +10,6 @@ Brain tumor classification; MRI; deep learning; ensemble learning; ResNet18; Den
 
 ### Background
 
-<<<<<<< HEAD
 Magnetic resonance imaging is widely used to inspect brain tissue and characterize suspected tumors. Automated image analysis can support radiologists by providing consistent first-pass classification, localization, and visual explanations.
 
 ### Problem Statement
@@ -20,7 +19,7 @@ Manual interpretation is time-intensive, while a classification label alone does
 ### Motivation
 
 NeuroScan.ai was developed to combine model prediction with interpretable image evidence and an educational functional-region assessment. It is a supplementary decision-support prototype, not a diagnostic device.
-=======
+
 
 ### Contributions
 
@@ -31,7 +30,7 @@ NeuroScan.ai was developed to combine model prediction with interpretable image 
 - Coarse centroid-to-lobe mapping and potential functional impact descriptions.
 - Streamlit interface for image upload and end-to-end result presentation.
 
-<<<<<<< HEAD
+
 ## II. Related Work
 
 ### Existing Brain Tumor Classification Methods
@@ -62,7 +61,7 @@ In this project, it enables quick and efficient predictions suitable for real-ti
 
 U-Net and its variants are widely used for biomedical segmentation because encoder features can be combined with decoder features through skip connections. The implementation uses a custom U-Net with four encoder and four decoder stages and a one-channel output mask.
 
-<<<<<<< HEAD
+
 ### Explainable AI / Grad-CAM
 
 Grad-CAM uses gradients flowing into a convolutional feature layer to create a coarse class-specific importance map. In this project, the map is generated from ResNet18 layer `layer4[-1].conv2` and resized to the 224×224 classification image.
