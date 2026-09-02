@@ -1,18 +1,8 @@
-<<<<<<< HEAD
 # NeuroScan.ai: Brain Tumor Detection and Functional Impact Assessment
 
 ## Abstract
-=======
-# NeuroScan.ai - Brain Tumor Detection 
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 NeuroScan.ai is a computer-vision decision-support application for analyzing brain MRI images. The system classifies an image into glioma, meningioma, no tumor, or pituitary tumor using an ensemble of trained convolutional neural networks. It combines ResNet18 and DenseNet121 predictions at runtime, provides a class-specific Grad-CAM explanation, estimates a tumor mask with a U-Net segmentation model, extracts the mask centroid and bounding box, and maps the estimated location to a coarse brain region and potential functional impacts. The application is implemented in Python with PyTorch, OpenCV, PIL, and Streamlit. The saved checkpoint metadata reports 77.38% test accuracy for ResNet18, 77.75% for DenseNet121, and 77.69% for MobileNetV2; no accuracy value is stored for the ensemble checkpoint. Higher values in the analysis report are retained below as unverified analysis summaries and should not be presented as validated performance.
-
-<<<<<<< HEAD
-## Keywords
-=======
-**NeuroScan.ai** is a platform designed for the detection and classification of brain tumors from MRI scans. Leveraging state-of-the-art deep learning models and ensemble methods, NeuroScan.ai provides accurate and reliable predictions to support diagnostic workflows in healthcare settings.
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 Brain tumor classification; MRI; deep learning; ensemble learning; ResNet18; DenseNet121; MobileNetV2; U-Net; Grad-CAM; explainable AI; tumor localization; functional brain mapping; Streamlit.
 
@@ -31,27 +21,6 @@ Manual interpretation is time-intensive, while a classification label alone does
 
 NeuroScan.ai was developed to combine model prediction with interpretable image evidence and an educational functional-region assessment. It is a supplementary decision-support prototype, not a diagnostic device.
 =======
-## Screenshots
-
-### About Page
-- Platform overview and capabilities
-- Brain tumor education
-- Model architecture information
-<img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
-
-### Tumor Detection Interface
-- MRI image upload and display
-- Real-time predictions with confidence scores
-- Detailed tumor information and symptoms
-<img width="1600" height="742" alt="image" src="https://github.com/user-attachments/assets/00c5fb3a-c7c6-4c93-a375-334346416bdb" />
-
-
-### Grad-CAM Visualization
-- Original MRI scan alongside Grad-CAM heatmaps
-- Class-specific attention maps for all ensemble models
-- Heatmap legend for interpretation
-<img width="1600" height="725" alt="image" src="https://github.com/user-attachments/assets/fb76e918-30a9-492e-9c56-ca304062dde8" />
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 ### Contributions
 
@@ -90,7 +59,6 @@ It enhances the model’s ability to detect subtle tumor features.
 MobileNetV2 is a lightweight and efficient neural network designed for fast computation.
 It uses depthwise separable convolutions to reduce complexity while maintaining performance.
 In this project, it enables quick and efficient predictions suitable for real-time applications.
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 U-Net and its variants are widely used for biomedical segmentation because encoder features can be combined with decoder features through skip connections. The implementation uses a custom U-Net with four encoder and four decoder stages and a one-channel output mask.
 
@@ -284,7 +252,6 @@ The three models work together using an ensemble voting mechanism:
 4. Increased robustness and reliability compared to single models
    
 --- 
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 #### Dataset Distribution
 
@@ -307,7 +274,6 @@ The reported partition counts sum to 3,599 rather than 3,596, so the dataset spl
 
 #### Training and Cross-Validation Indicators
 =======
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 | Indicator | Reported value |
 |---|---:|
@@ -319,7 +285,7 @@ The reported partition counts sum to 3,599 rather than 3,596, so the dataset spl
 | Maximum fold accuracy | 97.1% |
 | Approximate convergence | Epoch 35 of 50 |
 
-<<<<<<< HEAD
+
 #### Ensemble and Agreement Analysis
 
 | Comparison | Reported improvement or value |
@@ -383,24 +349,11 @@ NeuroScan.ai provides an end-to-end prototype for four-class brain MRI classific
 
 Future work should establish a reproducible patient-level dataset split, expose the MobileNetV2 model consistently in the runtime ensemble, add Dice and IoU evaluation for segmentation, calibrate confidence scores, support DICOM and multi-slice/3-D input, replace heuristic mapping with registered anatomical localization, and conduct external clinical validation.
 
-## References
-
-1. O. Ronneberger, P. Fischer, and T. Brox, “U-Net: Convolutional Networks for Biomedical Image Segmentation,” *MICCAI*, 2015.
-2. K. He, X. Zhang, S. Ren, and J. Sun, “Deep Residual Learning for Image Recognition,” *CVPR*, 2016.
-3. G. Huang, Z. Liu, L. van der Maaten, and K. Q. Weinberger, “Densely Connected Convolutional Networks,” *CVPR*, 2017.
-4. M. Sandler et al., “MobileNetV2: Inverted Residuals and Linear Bottlenecks,” *CVPR*, 2018.
-5. R. R. Selvaraju et al., “Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization,” *ICCV*, 2017.
-6. F. Isensee et al., “nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation,” *Nature Methods*, 2021.
 
 ## Medical Disclaimer
 
 NeuroScan.ai is a research and educational prototype. It is not a substitute for a qualified radiologist, neurologist, oncologist, or other medical professional. Predictions, visualizations, segmentation results, and functional-impact descriptions must not be used alone for diagnosis or treatment decisions.
 =======
 
-## Important Disclaimer
-
-⚠️ **MEDICAL DISCLAIMER**: NeuroScan.ai is designed as a **supplementary diagnostic tool** and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions. This tool is intended to assist radiologists and healthcare providers as a second opinion in their diagnostic workflows.
 
 
-
->>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
