@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 # NeuroScan.ai: Brain Tumor Detection and Functional Impact Assessment
 
 ## Abstract
+=======
+# NeuroScan.ai - Brain Tumor Detection 
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 NeuroScan.ai is a computer-vision decision-support application for analyzing brain MRI images. The system classifies an image into glioma, meningioma, no tumor, or pituitary tumor using an ensemble of trained convolutional neural networks. It combines ResNet18 and DenseNet121 predictions at runtime, provides a class-specific Grad-CAM explanation, estimates a tumor mask with a U-Net segmentation model, extracts the mask centroid and bounding box, and maps the estimated location to a coarse brain region and potential functional impacts. The application is implemented in Python with PyTorch, OpenCV, PIL, and Streamlit. The saved checkpoint metadata reports 77.38% test accuracy for ResNet18, 77.75% for DenseNet121, and 77.69% for MobileNetV2; no accuracy value is stored for the ensemble checkpoint. Higher values in the analysis report are retained below as unverified analysis summaries and should not be presented as validated performance.
 
+<<<<<<< HEAD
 ## Keywords
+=======
+**NeuroScan.ai** is a platform designed for the detection and classification of brain tumors from MRI scans. Leveraging state-of-the-art deep learning models and ensemble methods, NeuroScan.ai provides accurate and reliable predictions to support diagnostic workflows in healthcare settings.
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 Brain tumor classification; MRI; deep learning; ensemble learning; ResNet18; DenseNet121; MobileNetV2; U-Net; Grad-CAM; explainable AI; tumor localization; functional brain mapping; Streamlit.
 
@@ -12,6 +20,7 @@ Brain tumor classification; MRI; deep learning; ensemble learning; ResNet18; Den
 
 ### Background
 
+<<<<<<< HEAD
 Magnetic resonance imaging is widely used to inspect brain tissue and characterize suspected tumors. Automated image analysis can support radiologists by providing consistent first-pass classification, localization, and visual explanations.
 
 ### Problem Statement
@@ -21,6 +30,28 @@ Manual interpretation is time-intensive, while a classification label alone does
 ### Motivation
 
 NeuroScan.ai was developed to combine model prediction with interpretable image evidence and an educational functional-region assessment. It is a supplementary decision-support prototype, not a diagnostic device.
+=======
+## Screenshots
+
+### About Page
+- Platform overview and capabilities
+- Brain tumor education
+- Model architecture information
+<img width="1600" height="701" alt="image" src="https://github.com/user-attachments/assets/351ef15a-c274-43f5-8386-477cd66f0cac" />
+
+### Tumor Detection Interface
+- MRI image upload and display
+- Real-time predictions with confidence scores
+- Detailed tumor information and symptoms
+<img width="1600" height="742" alt="image" src="https://github.com/user-attachments/assets/00c5fb3a-c7c6-4c93-a375-334346416bdb" />
+
+
+### Grad-CAM Visualization
+- Original MRI scan alongside Grad-CAM heatmaps
+- Class-specific attention maps for all ensemble models
+- Heatmap legend for interpretation
+<img width="1600" height="725" alt="image" src="https://github.com/user-attachments/assets/fb76e918-30a9-492e-9c56-ca304062dde8" />
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 ### Contributions
 
@@ -31,6 +62,7 @@ NeuroScan.ai was developed to combine model prediction with interpretable image 
 - Coarse centroid-to-lobe mapping and potential functional impact descriptions.
 - Streamlit interface for image upload and end-to-end result presentation.
 
+<<<<<<< HEAD
 ## II. Related Work
 
 ### Existing Brain Tumor Classification Methods
@@ -38,9 +70,31 @@ NeuroScan.ai was developed to combine model prediction with interpretable image 
 Transfer learning with CNN architectures such as ResNet, DenseNet, and MobileNet is a common approach for MRI classification. Residual connections help optimize deeper networks, dense connectivity encourages feature reuse, and MobileNet reduces computation through lightweight convolutional blocks.
 
 ### Tumor Segmentation Approaches
+=======
+NeuroScan.ai uses an ensemble approach combining three state-of-the-art deep learning architectures:
+ 
+### ResNet-18
+
+ResNet-18 is a deep convolutional neural network that uses residual connections to avoid vanishing gradient problems.
+It enables stable and efficient training even with deeper architectures.
+In this project, it provides reliable and high-performing predictions for tumor classification.
+
+### DenseNet-121
+
+DenseNet-121 connects each layer to every other layer, improving feature reuse and gradient flow.
+This architecture captures complex patterns and fine details in MRI images.
+It enhances the model’s ability to detect subtle tumor features.
+
+### MobileNetV2
+
+MobileNetV2 is a lightweight and efficient neural network designed for fast computation.
+It uses depthwise separable convolutions to reduce complexity while maintaining performance.
+In this project, it enables quick and efficient predictions suitable for real-time applications.
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 U-Net and its variants are widely used for biomedical segmentation because encoder features can be combined with decoder features through skip connections. The implementation uses a custom U-Net with four encoder and four decoder stages and a one-channel output mask.
 
+<<<<<<< HEAD
 ### Explainable AI / Grad-CAM
 
 Grad-CAM uses gradients flowing into a convolutional feature layer to create a coarse class-specific importance map. In this project, the map is generated from ResNet18 layer `layer4[-1].conv2` and resized to the 224×224 classification image.
@@ -222,6 +276,15 @@ The following tables consolidate the percentages and accuracy values in `RESULTS
 | Low image quality | 8 | 30% |
 | Edge cases | 5 | 19% |
 | Labeling ambiguity | 2 | 7% |
+=======
+The three models work together using an ensemble voting mechanism:
+1. Each model independently analyzes the MRI scan
+2. Individual predictions are combined using weighted averaging
+3. Final prediction includes confidence scores for each tumor class
+4. Increased robustness and reliability compared to single models
+   
+--- 
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 #### Dataset Distribution
 
@@ -233,6 +296,7 @@ The following tables consolidate the percentages and accuracy values in `RESULTS
 | No tumor | 902 | 25.0% |
 | Total | 3,596 | 100.0% |
 
+<<<<<<< HEAD
 | Partition | Images | Share |
 |---|---:|---:|
 | Training | 3,064 | 85.0% |
@@ -242,6 +306,8 @@ The following tables consolidate the percentages and accuracy values in `RESULTS
 The reported partition counts sum to 3,599 rather than 3,596, so the dataset split must be checked before producing a final distribution chart. The 766-sample confusion-matrix evaluation is a separate reported evaluation summary.
 
 #### Training and Cross-Validation Indicators
+=======
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d
 
 | Indicator | Reported value |
 |---|---:|
@@ -253,6 +319,7 @@ The reported partition counts sum to 3,599 rather than 3,596, so the dataset spl
 | Maximum fold accuracy | 97.1% |
 | Approximate convergence | Epoch 35 of 50 |
 
+<<<<<<< HEAD
 #### Ensemble and Agreement Analysis
 
 | Comparison | Reported improvement or value |
@@ -328,3 +395,12 @@ Future work should establish a reproducible patient-level dataset split, expose 
 ## Medical Disclaimer
 
 NeuroScan.ai is a research and educational prototype. It is not a substitute for a qualified radiologist, neurologist, oncologist, or other medical professional. Predictions, visualizations, segmentation results, and functional-impact descriptions must not be used alone for diagnosis or treatment decisions.
+=======
+
+## Important Disclaimer
+
+⚠️ **MEDICAL DISCLAIMER**: NeuroScan.ai is designed as a **supplementary diagnostic tool** and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions. This tool is intended to assist radiologists and healthcare providers as a second opinion in their diagnostic workflows.
+
+
+
+>>>>>>> 5578436e18827ab560cb18b6e94bf5b1390f090d

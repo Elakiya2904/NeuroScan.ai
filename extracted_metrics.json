@@ -1,0 +1,44 @@
+{
+  "brain_tumor_detection.ipynb - Colab.pdf": {
+    "accuracies": [
+      "82.50",
+      "83.48",
+      "84.11",
+      "77.38",
+      "0.7738",
+      "77.69",
+      "0.7769",
+      "77.75",
+      "0.7775",
+      "80.19"
+    ],
+    "precisions": [],
+    "recalls": [],
+    "f1_scores": [],
+    "losses": [
+      ".4",
+      ".4",
+      "0.8204",
+      "0.5040",
+      "0.5990",
+      "0.4550",
+      "0.7725",
+      "0.5606",
+      "0.5349",
+      "0.4834"
+    ],
+    "val_accuracies": []
+  },
+  "segmentation.ipynb - Colab.pdf": {
+    "accuracies": [],
+    "precisions": [],
+    "recalls": [],
+    "f1_scores": [],
+    "losses": [
+      ".4",
+      "1.3247",
+      "1.1809"
+    ],
+    "val_accuracies": []
+  }
+}
