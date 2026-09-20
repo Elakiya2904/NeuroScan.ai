@@ -349,7 +349,7 @@ NeuroScan.ai provides an end-to-end prototype for four-class brain MRI classific
 Future work should establish a reproducible patient-level dataset split, expose the MobileNetV2 model consistently in the runtime ensemble, add Dice and IoU evaluation for segmentation, calibrate confidence scores, support DICOM and multi-slice/3-D input, replace heuristic mapping with registered anatomical localization, and conduct external clinical validation.
 
 
-## Medical Disclaimer
+### Medical Disclaimer
 
 NeuroScan.ai is a research and educational prototype. It is not a substitute for a qualified radiologist, neurologist, oncologist, or other medical professional. Predictions, visualizations, segmentation results, and functional-impact descriptions must not be used alone for diagnosis or treatment decisions.
 =======
