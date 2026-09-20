@@ -352,7 +352,6 @@ Future work should establish a reproducible patient-level dataset split, expose 
 ### Medical Disclaimer
 
 NeuroScan.ai is a research and educational prototype. It is not a substitute for a qualified radiologist, neurologist, oncologist, or other medical professional. Predictions, visualizations, segmentation results, and functional-impact descriptions must not be used alone for diagnosis or treatment decisions.
-=======
 
 
 
