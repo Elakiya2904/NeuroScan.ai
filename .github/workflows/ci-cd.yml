@@ -1,0 +1,58 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Compile Python modules
+        run: python -m compileall -q app.py extract_metrics.py functional_mapping.py test_pipeline.py
+
+      - name: Run end-to-end pipeline checks
+        run: python test_pipeline.py
+
+  package:
+    name: Package release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create deployment bundle
+        run: |
+          mkdir -p release/neuroscan-ai
+          cp app.py functional_mapping.py requirements.txt README.md release/neuroscan-ai/
+          cp -r saved_models release/neuroscan-ai/
+          tar -czf "neuroscan-ai-${GITHUB_REF_NAME}.tar.gz" -C release neuroscan-ai
+
+      - name: Publish GitHub release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: neuroscan-ai-${{ github.ref_name }}.tar.gz
